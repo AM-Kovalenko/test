@@ -6,6 +6,13 @@
 </head>
 <body>
 asasda
-{{title}}
+Contracts:
+<ul>
+    {% for contract in contracts %}
+        <li><a href="{% url 'man' contract.id %}">{{contract.name}}</a></li>
+    {% endfor %}
+</ul>
+
+
 </body>
 </html>
