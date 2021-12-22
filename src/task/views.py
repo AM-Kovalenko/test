@@ -1,3 +1,13 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def index(request):
+    # posts = Women.objects.all()
+    # cats = Category.objects.all()
+
+    context = {
+
+        'title': 'Главная страница',
+
+    }
+    return render(request, 'test/index.html', context=context)
