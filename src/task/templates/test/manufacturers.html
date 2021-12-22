@@ -5,9 +5,10 @@
     <title>{{title}}</title>
 </head>
 <body>
+Производители всех товаров, которые связаны с этим контрактом:
 <ul>
 {% for manufacturer in manufacturers %}
-    <li>{{manufacturer.name}}</li>
+    <li>{{manufacturer.name}} (id: {{manufacturer.id}}, time_created: {{manufacturer.time_created}})</li>
 {% endfor %}
 </ul>
 </body>
