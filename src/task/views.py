@@ -10,12 +10,13 @@ def index(request, *args, **kwargs):
 
 
 def get_products_by_contract(request, contract_id, *args, **kwargs):
-    manufacturers = Manufacturer.objects.filter(
-        products__credit_applications__contract=contract_id
-    )
-    # manufacturers = CreditApplication.objects.filter(contract=contract_id).values_list('product_list__manufacturer',
-    #                                                                                    flat=True)
+    # manufacturers = Manufacturer.objects.filter(
+    #     products__credit_applications__contract=contract_id
+    # )
 
+    manufacturers = CreditApplication.objects.filter(contract=contract_id).values_list('product_list__manufacturer',
+                                                                                       flat=True).distinct()
+    print(manufacturers)
     context = {
 
         'title': 'Главная страница',
