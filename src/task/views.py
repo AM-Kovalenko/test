@@ -16,7 +16,6 @@ def get_products_by_contract(request, contract_id, *args, **kwargs):
 
     manufacturers = CreditApplication.objects.filter(contract=contract_id).values_list('product_list__manufacturer',
                                                                                        flat=True).distinct()
-    print(manufacturers)
     context = {
 
         'title': 'Главная страница',
